@@ -15,6 +15,41 @@
 						</div>
 					</div>
 				</div>
+				<div>
+					<div>
+						<label>商品説明</label>
+						<div>
+							<%= f.text_area :introduction %>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<label>ジャンル</label>
+						<div>
+							<!--<%= f.collection_select %>-->
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<label>税抜価格</label>
+						<div>
+							<%= f.number_field :price %>円
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<label>販売<br>ステータス</label>
+						<div>
+							<%= f.select :sales_status, Item.sales_statuses.keys.to_a %>
+						</div>
+					</div>
+				</div>
+				<div>
+					<%= f.submit '新規登録' %>
+				</div>
 		</div>
 	</div>
 </div>
