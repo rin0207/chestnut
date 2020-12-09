@@ -13,6 +13,22 @@
 				<label>商品説明</label>
 				<div><%= @item.introduction %></div>
 			</div>
+			<div>
+				<label>ジャンル</label>
+				<div><%= @item.genre.name %></div>
+			</div>
+			<div>
+				<label>税込価格(税抜価格)</label>
+				<div>
+					<%= (@item.price.to_i*1.10).floor %>
+					(<%= @item.price %>)円
+				</div>
+			</div>
+			<div>
+				<label>販売ステータス</label>
+				<div><%= @item.sales_status %></div>
+			</div>
+			<div><%= link_to "編集する", edit_admin_item_path %></div>
 		</div>
 	</div>
 </div>
