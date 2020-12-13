@@ -1,0 +1,40 @@
+<div>
+	<p>商品編集</p>
+	<div>
+		<%= form_for @item, :url => {:action => :update} do |f| %>
+		<div>
+			<div>
+				<div>
+					<%= attachment_image_tag @item, :image, fallback: "img/no_image.jpg", size:"300x200" %>
+				</div>
+				<%= f.attachment_field :image %>
+			</div>
+		</div>
+		<div>
+			<div>
+				<label>商品名</label>
+				<div><%= f.text_field :name %></div>
+			</div>
+			<div>
+				<label>商品説明</label>
+				<div><%= f.text_area :introduction %></div>
+			</div>
+			<div>
+				<label>ジャンル</label>
+				<div><!--<%= f.text_field :name %>--></div>
+			</div>
+			<div>
+				<label>税抜価格</label>
+				<div><%= f.number_field :price %>円</div>
+			</div>
+			<div>
+				<label>販売ステータス</label>
+				<div><%= f.select :sales_status, Item.sales_status.keys.to_a %></div>
+			</div>
+		</div>
+		<div>
+			<%= f.submit '変更を保存' %>
+		</div>
+		<% end %>
+	</div>
+</div>
