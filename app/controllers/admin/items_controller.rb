@@ -7,7 +7,7 @@ class Admin::ItemsController < ApplicationController
 		@item = Item.new
 	end
 
-	def crete
+	def create
 		@item = Item.new(item_params)
 		@items = Item.all
 		if @item.save
@@ -17,7 +17,21 @@ class Admin::ItemsController < ApplicationController
 		end
 	end
 
-	def index
-		@items = Item.find(params[:id])
+	def show
+		@item = Item.find(params[:id])
+	end
+
+	def edit
+		@item = Item.find(params[:id])
+	end
+
+	def update
+		@item = Item.find(params[:id])
+		@items = Item.all
+		if @item.update(item_params)
+			redirect_to admin_items_path(@item)
+		else
+			redirect_back(fallback_location: admin_items_path)
+		end
 	end
 end
