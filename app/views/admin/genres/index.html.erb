@@ -9,7 +9,29 @@
 			<div>
 				<%= f.text_field :name %>
 			</div>
+			<div>
+				<%= f.radio_button :valid_status, :true %>
+				<%= f.label :valid_status, "有効" %>
+				<%= f.radio_button :valid_status, :false %>
+				<%= f.label :valid_status, "無効" %>
+			</div>
+			<div>
+				<%= f.submit '追加'　%>
+			</div>
 			<% end %>
+		</div>
+	</div>
+	<div>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>ジャンル</th>
+						<th>状態</th>
+						<th></th>
+					</tr>
+				</thead>
+			</table>
 		</div>
 	</div>
 </div>
