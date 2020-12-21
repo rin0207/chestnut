@@ -31,6 +31,25 @@
 						<th></th>
 					</tr>
 				</thead>
+				<tbody>
+					<% @genres.each do |genre| %>
+					<tr>
+						<td>
+							<%= genre.name %>
+						</td>
+						<td>
+							<% if genre.valid_status == true %>
+								有効
+							<% else %>
+								無効
+							<% end %>
+						</td>
+						<td>
+							<%= link_to "編集", edit_admin_genre_path(genre) %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
 			</table>
 		</div>
 	</div>
