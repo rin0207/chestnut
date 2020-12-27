@@ -1,0 +1,17 @@
+<div>
+	<div>
+		<p>ジャンル編集</p>
+		<div>
+			<%= form_for @genre, :url => {:action => :update} do |f| %>
+			<div>
+				<label>ジャンル</label>
+			</div>
+			<div>
+				<%= f.text_field :name %>
+			</div>
+			<div>
+				<%= f.submit '変更を保存する' %>
+			</div>
+		</div>
+	</div>
+</div>
