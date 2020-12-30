@@ -10,6 +10,14 @@
 				<%= f.text_field :name %>
 			</div>
 			<div>
+				<label>
+					<%= f.radio_button :valid_status, 1 %>有効
+				</label>
+				<label>
+					<%= f.radio_button :valid_status, 0 %>無効
+				</label>
+			</div>
+			<div>
 				<%= f.submit '変更を保存する' %>
 			</div>
 		</div>
