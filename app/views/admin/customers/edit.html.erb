@@ -1,0 +1,51 @@
+<div>
+	<div>
+		<p><%= @customer.last_name_kanji %><%= @customer.first_name_kanji %>さんの会員情報編集ページ</p>
+		<div>
+
+			<%= form_for [:admin, @customer] do |f| %>
+
+			<div>
+				<div>顧客ID</div>
+				<div>氏名</div>
+				<div>フリガナ</div>
+				<div>郵便番号</div>
+				<div>住所</div>
+				<div>電話番号</div>
+				<div>メールアドレス</div>
+				<div>
+					<%= link_to "編集する", edit_admin_customer_path(@customer) %>
+				</div>
+				<div>
+					<%= f.submit "変更を保存する" %>
+				</div>
+			</div>
+			<div>
+				<div>
+					<%= customer.id %>
+				</div>
+				<div>
+					<%= @customer.last_name_kanji %>&emsp;<%= @customer.first_name_kanji %>
+				</div>
+				<div>
+					<%= @customer.last_name_kana %>&emsp;<%= @customer.first_name_kana %>
+				</div>
+				<div>
+					<%= @customer.postal_code %>
+				</div>
+				<div>
+					<%= @customer.address %>
+				</div>
+				<div>
+					<%= @customer.tel %>
+				</div>
+				<div>
+					<%= @customer.email %>
+				</div>
+			</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>
